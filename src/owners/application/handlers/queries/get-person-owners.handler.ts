@@ -13,20 +13,20 @@ export class GetPersonOwnersHandler implements IQueryHandler<GetPersonOwners> {
     const sql = `
     SELECT 
       id,
-      first_name as firstName,
-      last_name as lastName,
-      dni
+      user_name as userName,
+      email,
+      password
     FROM 
-      clients
+      owners
     WHERE
       type = 'P'
     ORDER BY
-      last_name, first_name;`;
+      id;`;
     const rows = await manager.query(sql);
     if (rows.length <= 0) return [];
-    const personClients: PersonOwnerDto[] = rows.map(function (row: any) {
+    const personOwners: PersonOwnerDto[] = rows.map(function (row: any) {
       return PersonMapper.ormToPersonOwnerDto(row);
     });
-    return personClients;
+    return personOwners;
   }
 }

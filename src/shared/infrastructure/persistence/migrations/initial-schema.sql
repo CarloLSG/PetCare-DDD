@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS owners(
   updated_by BIGINT UNSIGNED NULL,
   user_name VARCHAR(75) NULL,
   email VARCHAR(75) NULL,
-  password VARCHAR(75) NULL,
+  password VARCHAR(8) NULL,
   PRIMARY KEY(id),
   KEY IX_clients_created_by(created_by),
   KEY IX_clients_updated_by(updated_by),
