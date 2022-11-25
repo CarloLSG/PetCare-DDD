@@ -10,7 +10,7 @@ import { OwnerEntity } from './infrastructure/persistence/entities/owner.entity'
 import { PersonEntity } from './infrastructure/persistence/entities/person.entity';
 import { PersonController } from './interface/rest/person.controller';
 import { PersonEntityRepository } from './infrastructure/persistence/repositories/person.repository';
-import { PERSON_REPOSITORY } from './domain/aggregates/client/person.repository';
+import { PERSON_REPOSITORY } from './domain/aggregates/owner/person.repository';
 
 export const CommandHandlers = [RegisterPersonHandler];
 export const EventHandlers = [PersonRegisteredHandler];

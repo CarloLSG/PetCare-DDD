@@ -1,7 +1,7 @@
 import { AuditTrail } from '../../../shared/domain/values/audit-trail.value';
 import { PersonName } from '../../../shared/domain/values/person-name.value';
-import { Person } from '../aggregates/client/person.entity';
-import { OwnerId } from '../aggregates/client/owner-id.value';
+import { Person } from '../aggregates/owner/person.entity';
+import { OwnerId } from '../aggregates/owner/owner-id.value';
 import { Email } from '../../../shared/domain/values/email.value';
 import { Password } from '../../../shared/domain/values/password.value';
 

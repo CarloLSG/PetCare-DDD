@@ -6,8 +6,8 @@ import { RegisterPersonValidator } from '../validators/register-person.validator
 import { AppNotification } from 'src/shared/application/app.notification';
 import { Result } from 'typescript-result';
 import { RegisterPerson } from '../messages/commands/register-person.command';
-import { PersonRepository, PERSON_REPOSITORY } from 'src/owners/domain/aggregates/client/person.repository';
-import { Person } from 'src/owners/domain/aggregates/client/person.entity';
+import { PersonRepository, PERSON_REPOSITORY } from 'src/owners/domain/aggregates/owner/person.repository';
+import { Person } from 'src/owners/domain/aggregates/owner/person.entity';
 import { PersonMapper } from '../mappers/person.mapper';
 
 @Injectable()

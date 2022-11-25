@@ -1,4 +1,4 @@
-import { Person } from 'src/owners/domain/aggregates/client/person.entity';
+import { Person } from 'src/owners/domain/aggregates/owner/person.entity';
 import { AuditTrailValue } from 'src/shared/infrastructure/persistence/values/audit-trail.value';
 import { RegisterPerson } from '../messages/commands/register-person.command';
 import { PersonName } from 'src/shared/domain/values/person-name.value';
@@ -8,7 +8,7 @@ import { AuditTrail } from 'src/shared/domain/values/audit-trail.value';
 import { DateTime } from 'src/shared/domain/values/date-time.value';
 import { PersonFactory } from 'src/owners/domain/factories/person.factory';
 import { PersonOwnerDto } from '../dtos/response/person-owner.dto';
-import { OwnerId } from 'src/owners/domain/aggregates/client/owner-id.value';
+import { OwnerId } from 'src/owners/domain/aggregates/owner/owner-id.value';
 import { RegisterPersonRequest } from '../dtos/request/register-person-request.dto';
 import { RegisterPersonResponse } from '../dtos/response/register-person-response.dto';
 import { PersonEntity } from 'src/owners/infrastructure/persistence/entities/person.entity';

@@ -1,4 +1,4 @@
-import { OwnerType } from 'src/owners/domain/aggregates/client/owner-type.enum';
+import { OwnerType } from 'src/owners/domain/aggregates/owner/owner-type.enum';
 import { PersonRegistered } from 'src/owners/domain/events/person-registered.event';
 import { AuditTrail } from 'src/shared/domain/values/audit-trail.value';
 import { PersonName } from 'src/shared/domain/values/person-name.value';

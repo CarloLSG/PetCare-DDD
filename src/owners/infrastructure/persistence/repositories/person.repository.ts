@@ -1,7 +1,7 @@
 import { InjectRepository } from "@nestjs/typeorm";
 import { PersonMapper } from "src/owners/application/mappers/person.mapper";
-import { Person } from "src/owners/domain/aggregates/client/person.entity";
-import { PersonRepository } from "src/owners/domain/aggregates/client/person.repository";
+import { Person } from "src/owners/domain/aggregates/owner/person.entity";
+import { PersonRepository } from "src/owners/domain/aggregates/owner/person.repository";
 import { Repository } from "typeorm";
 import { PersonEntity } from "../entities/person.entity";
 

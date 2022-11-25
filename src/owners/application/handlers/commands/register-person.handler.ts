@@ -1,9 +1,9 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import { RegisterPerson } from '../../messages/commands/register-person.command';
 import { PersonMapper } from '../../mappers/person.mapper';
-import { Person } from 'src/owners/domain/aggregates/client/person.entity';
+import { Person } from 'src/owners/domain/aggregates/owner/person.entity';
 import { Inject } from '@nestjs/common';
-import { PersonRepository, PERSON_REPOSITORY } from 'src/owners/domain/aggregates/client/person.repository';
+import { PersonRepository, PERSON_REPOSITORY } from 'src/owners/domain/aggregates/owner/person.repository';
 import { AppSettings } from 'src/shared/application/app-settings';
 import { DataSource } from 'typeorm';
 

@@ -1,5 +1,5 @@
 import { ChildEntity, Column } from 'typeorm';
-import { OwnerType } from '../../../domain/aggregates/client/owner-type.enum';
+import { OwnerType } from '../../../domain/aggregates/owner/owner-type.enum';
 import { EmailValue } from '../values/email.value';
 import { PasswordValue } from '../values/password.value';
 import { UserNameValue } from '../values/user-name.value';

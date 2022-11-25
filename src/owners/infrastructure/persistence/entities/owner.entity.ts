@@ -1,6 +1,6 @@
 import { AuditTrailValue } from 'src/shared/infrastructure/persistence/values/audit-trail.value';
 import { Column, Entity, PrimaryGeneratedColumn, TableInheritance } from 'typeorm';
-import { OwnerType } from '../../../domain/aggregates/client/owner-type.enum';
+import { OwnerType } from '../../../domain/aggregates/owner/owner-type.enum';
 
 @Entity('owners')
 @TableInheritance({ column: 'type', })
