@@ -2,7 +2,6 @@ import { Person } from 'src/owners/domain/aggregates/client/person.entity';
 import { AuditTrailValue } from 'src/shared/infrastructure/persistence/values/audit-trail.value';
 import { RegisterPerson } from '../messages/commands/register-person.command';
 import { PersonName } from 'src/shared/domain/values/person-name.value';
-import { Dni } from 'src/shared/domain/values/dni.value';
 import { Password } from 'src/shared/domain/values/password.value';
 import { Email } from 'src/shared/domain/values/email.value';
 import { AuditTrail } from 'src/shared/domain/values/audit-trail.value';

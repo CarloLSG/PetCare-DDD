@@ -35,28 +35,6 @@ CREATE TABLE IF NOT EXISTS users (
   CONSTRAINT FK_users_district_id FOREIGN KEY(district_id) REFERENCES districts(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-/*CREATE TABLE IF NOT EXISTS clients(
-  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  type ENUM ('C', 'P') NOT NULL DEFAULT 'C',
-  created_at DATETIME NULL,
-  created_by BIGINT UNSIGNED NULL,
-  updated_at DATETIME NULL,
-  updated_by BIGINT UNSIGNED NULL,
-  company_name VARCHAR(150) NULL,
-  ruc VARCHAR(11) NULL,
-  first_name VARCHAR(75) NULL,
-  last_name VARCHAR(75) NULL,
-  dni VARCHAR(8) NULL,
-  PRIMARY KEY(id),
-  UNIQUE INDEX UQ_clients_ruc(ruc),
-  UNIQUE INDEX UQ_clients_company_name(company_name), 
-  UNIQUE INDEX UQ_clients_dni(dni),
-  KEY IX_clients_created_by(created_by),
-  KEY IX_clients_updated_by(updated_by),
-  CONSTRAINT FK_clients_created_by FOREIGN KEY(created_by) REFERENCES users(id),
-  CONSTRAINT FK_clients_updated_by FOREIGN KEY(updated_by) REFERENCES users(id)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;*/
-
 CREATE TABLE IF NOT EXISTS owners(
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   type ENUM ('C', 'P') NOT NULL DEFAULT 'C',
@@ -66,7 +44,7 @@ CREATE TABLE IF NOT EXISTS owners(
   updated_by BIGINT UNSIGNED NULL,
   user_name VARCHAR(75) NULL,
   email VARCHAR(75) NULL,
-  password VARCHAR(8) NULL,
+  password VARCHAR(75) NULL,
   PRIMARY KEY(id),
   KEY IX_clients_created_by(created_by),
   KEY IX_clients_updated_by(updated_by),
@@ -74,45 +52,18 @@ CREATE TABLE IF NOT EXISTS owners(
   CONSTRAINT FK_clients_updated_by FOREIGN KEY(updated_by) REFERENCES users(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE IF NOT EXISTS accounts(
+CREATE TABLE IF NOT EXISTS appointments (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  number VARCHAR(15) NOT NULL,
-  balance DECIMAL(10,2) NULL,
-  currency VARCHAR(3) NULL,
-  owner_id BIGINT UNSIGNED NOT NULL,
   created_at DATETIME NULL,
   created_by BIGINT UNSIGNED NULL,
   updated_at DATETIME NULL,
   updated_by BIGINT UNSIGNED NULL,
-  PRIMARY KEY (id),
-  UNIQUE KEY UQ_accounts_number(number),
-  KEY IX_accounts_owner_id(owner_id),
-  KEY IX_accounts_created_by(created_by),
-  KEY IX_accounts_updated_by(updated_by),
-  CONSTRAINT FK_accounts_owner_id FOREIGN KEY(owner_id) REFERENCES owners(id),
-  CONSTRAINT FK_accounts_created_by FOREIGN KEY(created_by) REFERENCES users(id),
-  CONSTRAINT FK_accounts_updated_by FOREIGN KEY(updated_by) REFERENCES users(id)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE IF NOT EXISTS transactions(
-  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  type CHAR(1) NOT NULL,
-  status TINYINT UNSIGNED NOT NULL,
-  from_account_id BIGINT UNSIGNED NOT NULL,
-  to_account_id BIGINT UNSIGNED NULL,
-  amount DECIMAL(10,2) NULL,
-  currency VARCHAR(3) NULL,
-  created_at DATETIME NULL,
-  created_by BIGINT UNSIGNED NULL,
-  updated_at DATETIME NULL,
-  updated_by BIGINT UNSIGNED NULL,
-  PRIMARY KEY (id),
-  KEY IX_transactions_from_account_id(from_account_id),
-  KEY IX_transactions_to_account_id(to_account_id),
-  KEY IX_transactions_created_by(created_by),
-  KEY IX_transactions_updated_by(updated_by),
-  CONSTRAINT FK_transactions_from_account_id FOREIGN KEY(from_account_id) REFERENCES accounts(id),
-  CONSTRAINT FK_transactions_to_account_id FOREIGN KEY(to_account_id) REFERENCES accounts(id),
-  CONSTRAINT FK_transactions_created_by FOREIGN KEY(created_by) REFERENCES users(id),
-  CONSTRAINT FK_transactions_updated_by FOREIGN KEY(updated_by) REFERENCES users(id)
+  day VARCHAR(5),
+  month VARCHAR(5),
+  year VARCHAR(5),
+  PRIMARY KEY(id),
+  KEY IX_appointment_created_by(created_by),
+  KEY IX_appointment_updated_by(updated_by),
+  CONSTRAINT FK_appointment_created_by FOREIGN KEY(created_by) REFERENCES users(id),
+  CONSTRAINT FK_appointment_updated_by FOREIGN KEY(updated_by) REFERENCES users(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

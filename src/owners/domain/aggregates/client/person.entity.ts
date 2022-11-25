@@ -3,7 +3,6 @@ import { PersonRegistered } from 'src/owners/domain/events/person-registered.eve
 import { AuditTrail } from 'src/shared/domain/values/audit-trail.value';
 import { PersonName } from 'src/shared/domain/values/person-name.value';
 import { OwnerId } from './owner-id.value';
-import { Dni } from '../../../../shared/domain/values/dni.value';
 import { Email } from '../../../../shared/domain/values/email.value';
 import { Password } from '../../../../shared/domain/values/password.value';
 import { Owner } from './owner.root.entity';

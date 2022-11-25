@@ -4,9 +4,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OwnersModule } from './owners/owners.module';
 import { UsersModule } from './users/users.module';
+import { AppointmentModule } from './appointments/appointments.module';
 import { NotificationsModule } from './notifications/notifications.module';
-import { TransactionsModule } from './transactions/transactions.module';
-import { AccountsModule } from './accounts/accounts.module';
+
 
 @Module({
   imports: [
@@ -33,8 +33,7 @@ import { AccountsModule } from './accounts/accounts.module';
     OwnersModule,
     UsersModule,
     NotificationsModule,
-    TransactionsModule,
-    AccountsModule
+    AppointmentModule
 ],
   controllers: [AppController],
   providers: [AppService],

@@ -34,11 +34,6 @@ export class PersonEntityRepository implements PersonRepository  {
     return PersonMapper.entityToDomain(personEntity);
   }
 
-  async getByDni(dni: string): Promise<Person> {
-    let personEntity: PersonEntity = await this.personRepository.createQueryBuilder().where("dni = :dni", { dni }).getOne();
-    return PersonMapper.entityToDomain(personEntity);
-  }
-
   async getByEmail(email: string): Promise<Person> {
     let personEntity: PersonEntity = await this.personRepository.createQueryBuilder().where("email = :email", {email}).getOne();
     return PersonMapper.entityToDomain(personEntity);
